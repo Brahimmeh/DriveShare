@@ -1,4 +1,4 @@
-import "./new.scss";
+import "./newVehicule.scss";
 import Sidebar from "../../components/sidebar/Sidebar";
 import Navbar from "../../components/navbar/Navbar";
 import DriveFolderUploadOutlinedIcon from "@mui/icons-material/DriveFolderUploadOutlined";
@@ -8,9 +8,9 @@ import { useNavigate } from "react-router-dom";
 
 
 
-const New = ({ inputs, title }) => {
+const NewVehicule = ({ inputs, title }) => {
   const navigate = useNavigate();
-  const [file, setFile] = useState("");
+  const [files, setFiles] = useState("");
   const [info, setInfo] = useState({});
 
   const handleChange = (e) => {
@@ -19,27 +19,31 @@ const New = ({ inputs, title }) => {
 
     const handleClick = async (e) => {
     e.preventDefault();
-    const data = new FormData();
-    data.append("file", file);
-    data.append("upload_preset", "upload");
     try {
-      const uploadRes = await axios.post(
-        "https://api.cloudinary.com/v1_1/denprvy5x/image/upload",
-        data
-      );
+      const list = await Promise.all(
+        Object.values(files).map(async (file) => {
+          const data = new FormData();
+          data.append("file", file);
+          data.append("upload_preset", "upload");
+          const uploadRes = await axios.post(
+            "https://api.cloudinary.com/v1_1/denprvy5x/image/upload",
+            data
+          );
 
-      
-      const { url } = uploadRes.data;
+          const { url } = uploadRes.data;
+          return url;
+        })
+      );
       
       const newUser = {
         ...info,
-        img_path: url,
+        img_path: list,
       };
-      await axios.post("/auth/register", newUser);
+      await axios.post("/vehicule", newUser);
     } catch (err) {
     }
 
-    navigate("/user");
+    navigate("/vehicule");
   };
   return (
     <div className="new">
@@ -53,8 +57,8 @@ const New = ({ inputs, title }) => {
           <div className="left">
             <img
               src={
-                file
-                  ? URL.createObjectURL(file)
+                files
+                  ? URL.createObjectURL(files[0])
                   : "https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg"
               }
               alt=""
@@ -69,13 +73,23 @@ const New = ({ inputs, title }) => {
                 <input
                   type="file"
                   id="file"
-                  onChange={(e) => setFile(e.target.files[0])}
+                  multiple
+                  onChange={(e) => setFiles(e.target.files)}
                   style={{ display: "none" }}
                 />
               </div>
+
               <div className="formInput">
-                <label>Admin Privileges</label>
-                <select id="isAdmin" onChange={handleChange}>
+                <label>Luxurous Category</label>
+                <select id="luxe" onChange={handleChange}>
+                  <option value={false}>No</option>
+                  <option value={true}>Yes</option>
+                </select>
+              </div>
+
+              <div className="formInput">
+                <label>Featured</label>
+                <select id="featured" onChange={handleChange}>
                   <option value={false}>No</option>
                   <option value={true}>Yes</option>
                 </select>
@@ -96,4 +110,4 @@ const New = ({ inputs, title }) => {
   );
 };
 
-export default New;
+export default NewVehicule;

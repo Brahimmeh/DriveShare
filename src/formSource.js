@@ -1,77 +1,202 @@
 export const userInputs = [
     {
-      id: 1,
+      id: "username",
       label: "Username",
       type: "text",
-      placeholder: "john_doe",
+      placeholder: "Enter Unsername",
     },
     {
-      id: 2,
+      id: "name",
       label: "Name and surname",
       type: "text",
-      placeholder: "John Doe",
+      placeholder: "Enter Full Name",
     },
     {
-      id: 3,
+      id: "email",
       label: "Email",
       type: "mail",
-      placeholder: "john_doe@gmail.com",
+      placeholder: "Enter Valid Email",
     },
     {
-      id: 4,
-      label: "Phone",
-      type: "text",
-      placeholder: "+1 234 567 89",
-    },
-    {
-      id: 5,
+      id: "password",
       label: "Password",
       type: "password",
     },
-    {
-      id: 6,
-      label: "Address",
-      type: "text",
-      placeholder: "Elton St. 216 NewYork",
-    },
-    {
-      id: 7,
-      label: "Country",
-      type: "text",
-      placeholder: "USA",
-    },
   ];
   
-  export const productInputs = [
+  export const vehiculeInputs = [
     {
-      id: 1,
-      label: "Title",
+      id: "name",
+      label: "Name of the Vehicule",
       type: "text",
-      placeholder: "Apple Macbook Pro",
+      placeholder: "Enter the name",
     },
     {
-      id: 2,
+      id: "brand",
+      label: "Brand of the Vehicule",
+      type: "text",
+      placeholder: "Enter the brand",
+    },
+    {
+      id: "seats_nbr",
+      label: "Seats Number",
+      type: "number",
+      placeholder: "Enter the seats number",
+    },
+    {
+      id: "type",
+      label: "Type of the Vehicule",
+      type: "text",
+      placeholder: "Enter the type",
+    },
+    {
+      id: "min_price",
+      label: "Min Price",
+      type: "number",
+      placeholder: "Enter the Min price in DH",
+    },
+    {
+      id: "desc",
       label: "Description",
       type: "text",
-      placeholder: "Description",
+      placeholder: "Enter the description",
     },
     {
-      id: 3,
-      label: "Category",
+      id: "rating",
+      label: "Rating of the Vehicule",
       type: "text",
-      placeholder: "Computers",
+      placeholder: "Enter the rating (/10)",
+    },
+   
+  ];
+
+  export const LocationInputs = [
+    {
+      id: "name",
+      label: "Name of the Location",
+      type: "text",
+      placeholder: "Enter the name",
     },
     {
-      id: 4,
-      label: "Price",
-      type: "text",
-      placeholder: "100",
+      id: "latitude",
+      label: "Latitude of the Location",
+      type: "number",
+      placeholder: "Enter the Latitude",
     },
     {
-      id: 5,
-      label: "Stock",
+      id: "longtitude",
+      label: "Longtitude of the Location",
+      type: "number",
+      placeholder: "Enter the longtitude",
+    },
+    {
+      id: "desc",
+      label: "Description",
       type: "text",
-      placeholder: "in stock",
+      placeholder: "Enter the description",
     },
   ];
   
+  export const pathInputs = [
+    {
+      id: "name",
+      label: "Name of the Path",
+      type: "text",
+      placeholder: "Enter the name",
+    },
+    {
+      id: "LocationDep",
+      label: "ID of the Location Deparature",
+      type: "text",
+      placeholder: "Enter the location ID",
+    },
+    {
+      id: "LocationArr",
+      label: "ID of the Location Arrival",
+      type: "text",
+      placeholder: "Enter the location ID",
+    },
+    {
+      id: "distance",
+      label: "Distance of the Path",
+      type: "number",
+      placeholder: "Enter the distance",
+    },
+    {
+      id: "min_price",
+      label: "Min Price",
+      type: "number",
+      placeholder: "Enter the Min price in DH",
+    },
+    {
+      id: "desc",
+      label: "Description",
+      type: "text",
+      placeholder: "Enter the description",
+    },
+    {
+      id: "rating",
+      label: "Rating of the Vehicule",
+      type: "text",
+      placeholder: "Enter the rating (/10)",
+    },
+  ];
+
+  export const hotelInputs = [
+    {
+      id: "name",
+      label: "Name of the Hotel",
+      type: "text",
+      placeholder: "Enter the name",
+    },
+    {
+      id: "title",
+      label: "Title of the Hotel",
+      type: "text",
+      placeholder: "Enter the title",
+    },
+    {
+      id: "type",
+      label: "Type of the Hotel",
+      type: "text",
+      placeholder: "Enter the type",
+    },
+    {
+      id: "city",
+      label: "City of the Hotel",
+      type: "text",
+      placeholder: "Enter the city",
+    },
+    {
+      id: "address",
+      label: "Address of the Hotel",
+      type: "text",
+      placeholder: "Enter the address",
+    },
+    {
+      id: "StarNumber",
+      label: "Number of the Stars",
+      type: "number",
+      placeholder: "Enter the Star Number",
+    },
+    {
+      id: "minPrice",
+      label: "Min Price",
+      type: "number",
+      placeholder: "Enter the Min price in DH",
+    },
+    {
+      id: "desc",
+      label: "Description",
+      type: "text",
+      placeholder: "Enter the description",
+    },
+    {
+      id: "rating",
+      label: "Rating of the Vehicule",
+      type: "text",
+      placeholder: "Enter the rating (/10)",
+    },
+ 
+   
+  ];
